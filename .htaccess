@@ -1,0 +1,38 @@
+
+  ##############################################################################
+  #                                                                            #
+  # jenada / Wichtige Erg‰nzungen                                              #
+  #                                                                            #
+  ##############################################################################
+
+  ##
+  # Statischen Dokument-Link auf Download Seite umleiten
+  ##
+  #Redirect 301 /dokument.pdf http://www.domain.com/downloads.html  
+
+  ##
+  # www. vor Subdomains entfernen
+  ##
+  RewriteCond %{HTTP_HOST} ^www\..*\..*\..* [NC]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+  ##
+  # www. voranstellen, wenn nicht vorhanden und keine andere Subdomain vorhanden.
+  ##
+  RewriteCond %{HTTP_HOST} !^www. [NC]
+  RewriteCond %{HTTP_HOST} !^.*\..*\..* [NC]
+  RewriteRule .* http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  ##
+  # Abschlieﬂenden Slash durch .html ersetzen
+  ##
+  RewriteRule ^(.+)/$ /$1.html [R=301,L]
+
+  ##
+  # Alles in Kleinbuchstaben umwandeln
+  ##
+  # ...funktioniert leider nicht mit htaccess! 
+
+
+  ##############################################################################
