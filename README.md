@@ -1,10 +1,8 @@
 contao-boilerplate
 ==================
 
-contao :: boilerplate
-
-Extensions
-----------
+Extensions - im Einsatz
+-----------------------
 
 ### [RealUrl]
 https://contao.org/de/extension-list/view/realurl.de.html
